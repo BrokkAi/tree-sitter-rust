@@ -111,7 +111,6 @@ module.exports = grammar({
     [$.array_expression],
     [$.visibility_modifier],
     [$.visibility_modifier, $.scoped_identifier, $.scoped_type_identifier],
-    [$.foreign_mod_item, $.function_modifiers],
   ],
 
   word: $ => $.identifier,
@@ -295,7 +294,8 @@ module.exports = grammar({
     ),
 
     foreign_mod_item: $ => seq(
-      optional('unsafe'),
+      optional($.visibility_modifier),
+      optional($._item_modifiers),
       $.extern_modifier,
       choice(
         ';',
@@ -420,6 +420,7 @@ module.exports = grammar({
 
     static_item: $ => seq(
       optional($.visibility_modifier),
+      optional(choice('unsafe', 'safe')),
       'static',
 
       // Not actual rust syntax, but made popular by the lazy_static crate.
@@ -472,12 +473,21 @@ module.exports = grammar({
       ';',
     ),
 
-    function_modifiers: $ => repeat1(choice(
+    function_modifiers: $ => choice(
+      $._item_modifiers,
+      $.extern_modifier,
+      seq(
+        $._item_modifiers,
+        $.extern_modifier,
+      ),
+    ),
+
+    _item_modifiers: _ => repeat1(choice(
       'async',
       'default',
       'const',
       'unsafe',
-      $.extern_modifier,
+      'safe',
     )),
 
     where_clause: $ => prec.right(seq(
