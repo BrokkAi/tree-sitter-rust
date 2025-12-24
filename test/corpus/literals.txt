@@ -53,11 +53,17 @@ Floating-point literals
 0.1f64;
 0.1f32;
 12E+99_f64;
+0.1f16;
+0.1f128;
 1.0ghijkl;
 
 --------------------------------------------------------------------------------
 
 (source_file
+  (expression_statement
+    (float_literal))
+  (expression_statement
+    (float_literal))
   (expression_statement
     (float_literal))
   (expression_statement
