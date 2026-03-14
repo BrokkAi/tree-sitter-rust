@@ -926,7 +926,6 @@
   {
     "type": "block_comment",
     "named": true,
-    "extra": true,
     "fields": {
       "doc": {
         "multiple": false,
@@ -2760,7 +2759,6 @@
   {
     "type": "line_comment",
     "named": true,
-    "extra": true,
     "fields": {
       "doc": {
         "multiple": false,
