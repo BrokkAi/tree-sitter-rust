@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: ${{vars.NODE_VERSION}}
       - name: Install pinned tree-sitter CLI
-        run: npm ci --legacy-peer-deps
+        run: |-
+          npm ci --legacy-peer-deps --ignore-scripts
+          npm rebuild tree-sitter-cli
       - name: Run fuzzer
         run: npx tree-sitter fuzz --iterations 100
