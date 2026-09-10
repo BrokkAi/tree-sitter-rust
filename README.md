@@ -1,8 +1,6 @@
 # Brokk's Rust Grammar for Tree-sitter
 
 [![CI][ci]](https://github.com/BrokkAi/tree-sitter-rust/actions/workflows/ci.yml)
-[![discord][discord]](https://discord.gg/w7nTvsVJhm)
-[![matrix][matrix]](https://matrix.to/#/#tree-sitter-chat:matrix.org)
 [![crates][crates]](https://crates.io/crates/brokk-tree-sitter-rust)
 [![docs.rs][docs]](https://docs.rs/brokk-tree-sitter-rust)
 
@@ -65,7 +63,5 @@ one executable.
   [Operators and Symbols](https://doc.rust-lang.org/stable/book/appendix-02-operators.html).
 
 [ci]: https://img.shields.io/github/actions/workflow/status/BrokkAi/tree-sitter-rust/ci.yml?logo=github&label=CI
-[discord]: https://img.shields.io/discord/1063097320771698699?logo=discord&label=discord
-[matrix]: https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&label=matrix
 [crates]: https://img.shields.io/crates/v/brokk-tree-sitter-rust?logo=rust
 [docs]: https://img.shields.io/docsrs/brokk-tree-sitter-rust?logo=docs.rs
