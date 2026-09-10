@@ -2050,11 +2050,15 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "extern_modifier",
+          "named": true
+        },
+        {
+          "type": "visibility_modifier",
           "named": true
         }
       ]
@@ -2148,7 +2152,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
@@ -5570,6 +5574,10 @@
   },
   {
     "type": "return",
+    "named": false
+  },
+  {
+    "type": "safe",
     "named": false
   },
   {

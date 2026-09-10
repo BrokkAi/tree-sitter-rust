@@ -1379,8 +1379,20 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "STRING",
-              "value": "unsafe"
+              "type": "SYMBOL",
+              "name": "visibility_modifier"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_item_modifiers"
             },
             {
               "type": "BLANK"
@@ -1531,8 +1543,25 @@
               ]
             },
             {
-              "type": "STRING",
-              "value": ";"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "where_clause"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                },
+                {
+                  "type": "STRING",
+                  "value": ";"
+                }
+              ]
             }
           ]
         }
@@ -2206,6 +2235,27 @@
           ]
         },
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "unsafe"
+                },
+                {
+                  "type": "STRING",
+                  "value": "safe"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
           "type": "STRING",
           "value": "static"
         },
@@ -2604,6 +2654,32 @@
       ]
     },
     "function_modifiers": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_item_modifiers"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "extern_modifier"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_item_modifiers"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "extern_modifier"
+            }
+          ]
+        }
+      ]
+    },
+    "_item_modifiers": {
       "type": "REPEAT1",
       "content": {
         "type": "CHOICE",
@@ -2625,8 +2701,8 @@
             "value": "unsafe"
           },
           {
-            "type": "SYMBOL",
-            "name": "extern_modifier"
+            "type": "STRING",
+            "value": "safe"
           }
         ]
       }
@@ -9922,10 +9998,6 @@
       "visibility_modifier",
       "scoped_identifier",
       "scoped_type_identifier"
-    ],
-    [
-      "foreign_mod_item",
-      "function_modifiers"
     ]
   ],
   "precedences": [],
