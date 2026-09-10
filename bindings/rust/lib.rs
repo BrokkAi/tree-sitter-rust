@@ -68,4 +68,11 @@ mod tests {
             .set_language(&tree_sitter_rust::LANGUAGE.into())
             .expect("Error loading upstream Rust parser");
     }
+
+    #[test]
+    fn test_declaration_supertype_is_queryable() {
+        let language = super::LANGUAGE.into();
+        tree_sitter::Query::new(&language, "(_declaration_statement) @declaration")
+            .expect("declaration supertype should be queryable");
+    }
 }
