@@ -929,11 +929,19 @@
               },
               {
                 "type": "STRING",
+                "value": "f16"
+              },
+              {
+                "type": "STRING",
                 "value": "f32"
               },
               {
                 "type": "STRING",
                 "value": "f64"
+              },
+              {
+                "type": "STRING",
+                "value": "f128"
               },
               {
                 "type": "STRING",
@@ -2929,11 +2937,19 @@
                     },
                     {
                       "type": "STRING",
+                      "value": "f16"
+                    },
+                    {
+                      "type": "STRING",
                       "value": "f32"
                     },
                     {
                       "type": "STRING",
                       "value": "f64"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "f128"
                     },
                     {
                       "type": "STRING",
@@ -4728,11 +4744,19 @@
               },
               {
                 "type": "STRING",
+                "value": "f16"
+              },
+              {
+                "type": "STRING",
                 "value": "f32"
               },
               {
                 "type": "STRING",
                 "value": "f64"
+              },
+              {
+                "type": "STRING",
+                "value": "f128"
               },
               {
                 "type": "STRING",
@@ -5810,11 +5834,19 @@
               },
               {
                 "type": "STRING",
+                "value": "f16"
+              },
+              {
+                "type": "STRING",
                 "value": "f32"
               },
               {
                 "type": "STRING",
                 "value": "f64"
+              },
+              {
+                "type": "STRING",
+                "value": "f128"
               },
               {
                 "type": "STRING",
@@ -8754,11 +8786,19 @@
               },
               {
                 "type": "STRING",
+                "value": "f16"
+              },
+              {
+                "type": "STRING",
                 "value": "f32"
               },
               {
                 "type": "STRING",
                 "value": "f64"
+              },
+              {
+                "type": "STRING",
+                "value": "f128"
               },
               {
                 "type": "STRING",
@@ -9655,11 +9695,19 @@
                   },
                   {
                     "type": "STRING",
+                    "value": "f16"
+                  },
+                  {
+                    "type": "STRING",
                     "value": "f32"
                   },
                   {
                     "type": "STRING",
                     "value": "f64"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "f128"
                   },
                   {
                     "type": "PATTERN",
@@ -10143,11 +10191,19 @@
               },
               {
                 "type": "STRING",
+                "value": "f16"
+              },
+              {
+                "type": "STRING",
                 "value": "f32"
               },
               {
                 "type": "STRING",
                 "value": "f64"
+              },
+              {
+                "type": "STRING",
+                "value": "f128"
               },
               {
                 "type": "STRING",
