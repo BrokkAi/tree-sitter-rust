@@ -17,9 +17,10 @@ It intentionally diverges where Brokk needs language support that is not yet
 available upstream. Unless you specifically need Brokk's changes, you may
 prefer the upstream project.
 
-The npm and Python bindings retain their upstream-compatible package names.
-The Brokk-namespaced Rust crate prefixes its native symbols, so it can coexist
-with the upstream `tree-sitter-rust` crate in one executable.
+The npm and Python bindings retain their upstream-compatible package names but
+are not published by this fork. The Brokk-namespaced Rust crate prefixes its
+native symbols, so it can coexist with the upstream `tree-sitter-rust` crate in
+one executable.
 
 ## Features
 
