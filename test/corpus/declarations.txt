@@ -1295,14 +1295,16 @@ pub macro mac_pub {
     name: (type_identifier)
     bounds: (trait_alias_bounds
       (type_identifier)))
-  (attribute_item
-    (attribute
-      (identifier)))
-  (macro_definition
-    name: (identifier)
-    (macro_rule
-      left: (token_tree_pattern)
-      right: (token_tree)))
+  (declaration_with_attribute
+    attributes: (attributes
+      (attribute_item
+        (attribute
+          (identifier))))
+    declaration: (macro_definition
+      name: (identifier)
+      (macro_rule
+        left: (token_tree_pattern)
+        right: (token_tree))))
   (decl_macro
     (visibility_modifier)
     name: (identifier)

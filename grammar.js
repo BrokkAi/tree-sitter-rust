@@ -110,7 +110,6 @@ module.exports = grammar({
     [$.scoped_identifier, $.scoped_type_identifier],
     [$.parameters, $._pattern],
     [$.parameters, $.tuple_struct_pattern],
-    [$.array_expression],
     [$.visibility_modifier],
     [$.visibility_modifier, $.scoped_identifier, $.scoped_type_identifier],
   ],
@@ -279,7 +278,7 @@ module.exports = grammar({
     ),
 
     attributes: $ => prec.left(-3,
-      repeat1($.attribute_item)
+      repeat1($.attribute_item),
     ),
 
     inner_attribute_item: $ => seq(
@@ -1019,15 +1018,15 @@ module.exports = grammar({
     ),
 
     _expression: $ => choice(
-        $._expression_without_attribute,
-        $.expression_with_attribute,
+      $._expression_without_attribute,
+      $.expression_with_attribute,
     ),
 
     expression_with_attribute: $ => prec(PREC.attribute,
       seq(
         field('attributes', $.attributes),
         field('expression', $._expression_without_attribute),
-      )
+      ),
     ),
 
     _expression_without_attribute: $ => choice(
@@ -1053,7 +1052,7 @@ module.exports = grammar({
       seq(
         field('attributes', $.attributes),
         field('expression', $._expression_ending_with_block_without_attribute),
-      )
+      ),
     ),
 
     _expression_ending_with_block: $ => choice(
