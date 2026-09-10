@@ -10076,5 +10076,6 @@
     "_literal_pattern",
     "_declaration_statement",
     "_pattern"
-  ]
+  ],
+  "reserved": {}
 }
