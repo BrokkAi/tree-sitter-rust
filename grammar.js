@@ -593,10 +593,10 @@ export default grammar({
       ':',
       sepBy1('+', choice(
         prec(1, seq(
-          optional("~const"),
-          optional("async"),
-          optional("!"),
-          $._type
+          optional(choice('~const', 'const', seq('[', 'const', ']'))),
+          optional('async'),
+          optional('!'),
+          $._type,
         )),
         $.lifetime,
         $.higher_ranked_trait_bound,

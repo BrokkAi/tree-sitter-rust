@@ -5984,5 +5984,9 @@
   {
     "type": "}",
     "named": false
+  },
+  {
+    "type": "~const",
+    "named": false
   }
 ]
