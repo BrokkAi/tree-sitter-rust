@@ -4,8 +4,7 @@
 [![discord][discord]](https://discord.gg/w7nTvsVJhm)
 [![matrix][matrix]](https://matrix.to/#/#tree-sitter-chat:matrix.org)
 [![crates][crates]](https://crates.io/crates/brokk-tree-sitter-rust)
-[![npm][npm]](https://www.npmjs.com/package/tree-sitter-rust)
-[![pypi][pypi]](https://pypi.org/project/tree-sitter-rust)
+[![docs.rs][docs]](https://docs.rs/brokk-tree-sitter-rust)
 
 This is the **Brokk-owned and independently maintained fork** of
 [`tree-sitter/tree-sitter-rust`](https://github.com/tree-sitter/tree-sitter-rust),
@@ -16,6 +15,21 @@ Rust package as
 It intentionally diverges where Brokk needs language support that is not yet
 available upstream. Unless you specifically need Brokk's changes, you may
 prefer the upstream project.
+
+## Installation
+
+Add the Brokk-maintained Rust crate to your project:
+
+```sh
+cargo add brokk-tree-sitter-rust@=0.24.2
+```
+
+Or add it directly to `Cargo.toml`:
+
+```toml
+[dependencies]
+brokk-tree-sitter-rust = "=0.24.2"
+```
 
 The npm and Python bindings retain their upstream-compatible package names but
 are not published by this fork. The Brokk-namespaced Rust crate prefixes its
@@ -53,6 +67,5 @@ one executable.
 [ci]: https://img.shields.io/github/actions/workflow/status/BrokkAi/tree-sitter-rust/ci.yml?logo=github&label=CI
 [discord]: https://img.shields.io/discord/1063097320771698699?logo=discord&label=discord
 [matrix]: https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&label=matrix
-[npm]: https://img.shields.io/npm/v/tree-sitter-rust?logo=npm
 [crates]: https://img.shields.io/crates/v/brokk-tree-sitter-rust?logo=rust
-[pypi]: https://img.shields.io/pypi/v/tree-sitter-rust?logo=pypi&logoColor=ffd242
+[docs]: https://img.shields.io/docsrs/brokk-tree-sitter-rust?logo=docs.rs
