@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tree-sitter-rust"
 description = "Brokk-maintained Rust grammar for tree-sitter"
-version = "0.24.2"
+version = "0.24.3"
 keywords = ["incremental", "parsing", "tree-sitter", "rust"]
 classifiers = [
   "Intended Audience :: Developers",

@@ -22,7 +22,7 @@
     }
   ],
   "metadata": {
-    "version": "0.24.2",
+    "version": "0.24.3",
     "license": "MIT",
     "description": "Brokk-maintained Tree-sitter grammar for Rust",
     "authors": [
