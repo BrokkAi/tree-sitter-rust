@@ -1,8 +1,8 @@
 {
   "name": "tree-sitter-rust",
   "version": "0.24.2",
-  "description": "Rust grammar for tree-sitter",
-  "repository": "https://github.com/tree-sitter/tree-sitter-rust",
+  "description": "Brokk-maintained Tree-sitter grammar for Rust",
+  "repository": "https://github.com/BrokkAi/tree-sitter-rust",
   "license": "MIT",
   "author": {
     "name": "Maxim Sokolov",
@@ -17,6 +17,9 @@
       "name": "Amaan Qureshi",
       "email": "amaanq12@gmail.com"
     }
+  ],
+  "maintainers": [
+    "Brokk"
   ],
   "main": "bindings/node",
   "types": "bindings/node",
@@ -54,6 +57,10 @@
       "optional": true
     }
   },
+  "bugs": {
+    "url": "https://github.com/BrokkAi/tree-sitter-rust/issues"
+  },
+  "homepage": "https://github.com/BrokkAi/tree-sitter-rust#readme",
   "scripts": {
     "install": "node-gyp-build",
     "lint": "eslint grammar.js",

@@ -1,16 +1,17 @@
 [package]
-name = "tree-sitter-rust"
-description = "Rust grammar for tree-sitter"
+name = "brokk-tree-sitter-rust"
+description = "Brokk-maintained Rust grammar for the tree-sitter parsing library"
 version = "0.24.2"
 authors = [
   "Max Brunsfeld <maxbrunsfeld@gmail.com>",
   "Amaan Qureshi <amaanq12@gmail.com>",
 ]
 license = "MIT"
-readme = "README.md"
+readme = "bindings/rust/README.md"
 keywords = ["incremental", "parsing", "tree-sitter", "rust"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-rust"
+repository = "https://github.com/BrokkAi/tree-sitter-rust"
+homepage = "https://github.com/BrokkAi/tree-sitter-rust"
 edition = "2021"
 autoexamples = false
 
@@ -28,3 +29,4 @@ cc = "1.1"
 
 [dev-dependencies]
 tree-sitter = "0.25"
+tree-sitter-rust = "=0.24.2"

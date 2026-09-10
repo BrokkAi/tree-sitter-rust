@@ -3,7 +3,7 @@ $(error Windows is not supported)
 endif
 
 LANGUAGE_NAME := tree-sitter-rust
-HOMEPAGE_URL := https://github.com/tree-sitter/tree-sitter-rust
+HOMEPAGE_URL := https://github.com/BrokkAi/tree-sitter-rust
 VERSION := 0.24.2
 
 # repository
