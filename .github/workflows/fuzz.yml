@@ -15,5 +15,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Set up Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: ${{vars.NODE_VERSION}}
+      - name: Install pinned tree-sitter CLI
+        run: npm ci --legacy-peer-deps
       - name: Run fuzzer
-        uses: tree-sitter/fuzz-action@6a1dcff00aefd038ba418bd63732a9add4901266 # v4
+        run: npx tree-sitter fuzz --iterations 100
