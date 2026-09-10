@@ -38,3 +38,6 @@ dist/
 *.tar.gz
 *.tgz
 *.zip
+
+# macOS metadata
+**/.DS_Store
