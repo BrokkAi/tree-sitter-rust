@@ -1,13 +1,25 @@
-# tree-sitter-rust
+# Brokk's Rust Grammar for Tree-sitter
 
-[![CI][ci]](https://github.com/tree-sitter/tree-sitter-rust/actions/workflows/ci.yml)
+[![CI][ci]](https://github.com/BrokkAi/tree-sitter-rust/actions/workflows/ci.yml)
 [![discord][discord]](https://discord.gg/w7nTvsVJhm)
 [![matrix][matrix]](https://matrix.to/#/#tree-sitter-chat:matrix.org)
-[![crates][crates]](https://crates.io/crates/tree-sitter-rust)
+[![crates][crates]](https://crates.io/crates/brokk-tree-sitter-rust)
 [![npm][npm]](https://www.npmjs.com/package/tree-sitter-rust)
 [![pypi][pypi]](https://pypi.org/project/tree-sitter-rust)
 
-Rust grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
+This is the **Brokk-owned and independently maintained fork** of
+[`tree-sitter/tree-sitter-rust`](https://github.com/tree-sitter/tree-sitter-rust),
+a Rust grammar for [Tree-sitter](https://tree-sitter.github.io/tree-sitter/).
+Brokk maintains this fork for its code-intelligence tooling and publishes the
+Rust package as
+[`brokk-tree-sitter-rust`](https://crates.io/crates/brokk-tree-sitter-rust).
+It intentionally diverges where Brokk needs language support that is not yet
+available upstream. Unless you specifically need Brokk's changes, you may
+prefer the upstream project.
+
+The npm and Python bindings retain their upstream-compatible package names.
+The Brokk-namespaced Rust crate prefixes its native symbols, so it can coexist
+with the upstream `tree-sitter-rust` crate in one executable.
 
 ## Features
 
@@ -37,9 +49,9 @@ Rust grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
 - [Keywords](https://doc.rust-lang.org/stable/book/appendix-01-keywords.html) and
   [Operators and Symbols](https://doc.rust-lang.org/stable/book/appendix-02-operators.html).
 
-[ci]: https://img.shields.io/github/actions/workflow/status/tree-sitter/tree-sitter-rust/ci.yml?logo=github&label=CI
+[ci]: https://img.shields.io/github/actions/workflow/status/BrokkAi/tree-sitter-rust/ci.yml?logo=github&label=CI
 [discord]: https://img.shields.io/discord/1063097320771698699?logo=discord&label=discord
 [matrix]: https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&label=matrix
 [npm]: https://img.shields.io/npm/v/tree-sitter-rust?logo=npm
-[crates]: https://img.shields.io/crates/v/tree-sitter-rust?logo=rust
+[crates]: https://img.shields.io/crates/v/brokk-tree-sitter-rust?logo=rust
 [pypi]: https://img.shields.io/pypi/v/tree-sitter-rust?logo=pypi&logoColor=ffd242

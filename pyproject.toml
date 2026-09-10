@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tree-sitter-rust"
-description = "Rust grammar for tree-sitter"
+description = "Brokk-maintained Rust grammar for tree-sitter"
 version = "0.24.2"
 keywords = ["incremental", "parsing", "tree-sitter", "rust"]
 classifiers = [
@@ -23,7 +23,9 @@ license.text = "MIT"
 readme = "README.md"
 
 [project.urls]
-Homepage = "https://github.com/tree-sitter/tree-sitter-rust"
+Homepage = "https://github.com/BrokkAi/tree-sitter-rust"
+Repository = "https://github.com/BrokkAi/tree-sitter-rust"
+Issues = "https://github.com/BrokkAi/tree-sitter-rust/issues"
 
 [project.optional-dependencies]
 core = ["tree-sitter~=0.22"]

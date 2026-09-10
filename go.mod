@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-rust
+module github.com/BrokkAi/tree-sitter-rust
 
 go 1.22
 
