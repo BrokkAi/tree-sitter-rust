@@ -141,6 +141,175 @@ match y {
                 (string_content)))))))))
 
 ================================================================================
+Struct pattern attributes
+================================================================================
+
+fn inspect(mut value: Record) {
+  let Record {
+    stable,
+    #[cfg(test)] #[cfg(feature = "probe")] shorthand,
+    #[cfg(test)] renamed: other,
+    #[cfg(test)] ref borrowed,
+    #[cfg(test)] mut mutable,
+    #[cfg(test)] ref mut mutable_borrow,
+    #[cfg(test)] renamed_ref: ref mut other_borrow,
+    ..
+  } = value;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_item
+    (identifier)
+    (parameters
+      (parameter
+        (mutable_specifier)
+        (identifier)
+        (type_identifier)))
+    (block
+      (let_declaration
+        (struct_pattern
+          (type_identifier)
+          (field_pattern
+            (shorthand_field_identifier))
+          (field_pattern
+            (attributes
+              (attribute_item
+                (attribute
+                  (identifier)
+                  (token_tree
+                    (identifier))))
+              (attribute_item
+                (attribute
+                  (identifier)
+                  (token_tree
+                    (identifier)
+                    (string_literal
+                      (string_content))))))
+            (shorthand_field_identifier))
+          (field_pattern
+            (attributes
+              (attribute_item
+                (attribute
+                  (identifier)
+                  (token_tree
+                    (identifier)))))
+            (field_identifier)
+            (identifier))
+          (field_pattern
+            (attributes
+              (attribute_item
+                (attribute
+                  (identifier)
+                  (token_tree
+                    (identifier)))))
+            (shorthand_field_identifier))
+          (field_pattern
+            (attributes
+              (attribute_item
+                (attribute
+                  (identifier)
+                  (token_tree
+                    (identifier)))))
+            (mutable_specifier)
+            (shorthand_field_identifier))
+          (field_pattern
+            (attributes
+              (attribute_item
+                (attribute
+                  (identifier)
+                  (token_tree
+                    (identifier)))))
+            (mutable_specifier)
+            (shorthand_field_identifier))
+          (field_pattern
+            (attributes
+              (attribute_item
+                (attribute
+                  (identifier)
+                  (token_tree
+                    (identifier)))))
+            (field_identifier)
+            (ref_pattern
+              (mut_pattern
+                (mutable_specifier)
+                (identifier))))
+          (remaining_field_pattern))
+        (identifier)))))
+
+================================================================================
+Struct pattern attributes ordinary control
+================================================================================
+
+fn inspect(mut value: Record) {
+  let Record {
+    stable,
+    shorthand,
+    renamed: other,
+    ref borrowed,
+    mut mutable,
+    ref mut mutable_borrow,
+    renamed_ref: ref mut other_borrow,
+    ..
+  } = value;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_item
+    (identifier)
+    (parameters
+      (parameter
+        (mutable_specifier)
+        (identifier)
+        (type_identifier)))
+    (block
+      (let_declaration
+        (struct_pattern
+          (type_identifier)
+          (field_pattern
+            (shorthand_field_identifier))
+          (field_pattern
+            (shorthand_field_identifier))
+          (field_pattern
+            (field_identifier)
+            (identifier))
+          (field_pattern
+            (shorthand_field_identifier))
+          (field_pattern
+            (mutable_specifier)
+            (shorthand_field_identifier))
+          (field_pattern
+            (mutable_specifier)
+            (shorthand_field_identifier))
+          (field_pattern
+            (field_identifier)
+            (ref_pattern
+              (mut_pattern
+                (mutable_specifier)
+                (identifier))))
+          (remaining_field_pattern))
+        (identifier)))))
+
+================================================================================
+Struct pattern attributes missing comma
+:error
+================================================================================
+
+fn inspect(value: Record) {
+  let Record {
+    stable
+    #[cfg(test)] shorthand,
+  } = value;
+}
+
+--------------------------------------------------------------------------------
+
+(ERROR)
+
+================================================================================
 Ignored patterns
 ================================================================================
 

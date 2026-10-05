@@ -1540,6 +1540,7 @@ export default grammar({
     ),
 
     field_pattern: $ => seq(
+      optional($.attributes),
       optional('ref'),
       optional($.mutable_specifier),
       choice(
