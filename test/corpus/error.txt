@@ -55,6 +55,53 @@ Json macro contents
         (MISSING ";")))
 
 ====================================
+Malformed inferred turbofish argument list
+====================================
+
+char::<_,, NomErrorType>('#');
+
+---
+
+(source_file
+  (expression_statement
+    (call_expression
+      (generic_function
+        (identifier)
+        (type_arguments
+          (ERROR)
+          (type_identifier)))
+      (arguments
+        (char_literal)))))
+
+====================================
+Empty higher-ranked type parameter list
+====================================
+
+fn tuple_return() -> (impl Subscriber + for<> LookupSpan<'a>, ()) {}
+
+---
+
+(source_file
+  (function_item
+    (identifier)
+    (parameters)
+    (tuple_type
+      (bounded_type
+        (abstract_type
+          (type_identifier))
+        (higher_ranked_trait_bound
+          (type_parameters
+            (type_parameter
+              (MISSING type_identifier)))
+          (generic_type
+            (type_identifier)
+            (type_arguments
+              (lifetime
+                (identifier))))))
+      (unit_type))
+    (block)))
+
+====================================
 Longer json macro contents
 ====================================
 

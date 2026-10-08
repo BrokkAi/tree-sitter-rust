@@ -877,6 +877,7 @@ export default grammar({
     generic_function: $ => prec(1, seq(
       field('function', choice(
         $.identifier,
+        alias(choice(...primitiveTypes), $.identifier),
         $.scoped_identifier,
         $.field_expression,
       )),
@@ -905,7 +906,7 @@ export default grammar({
     bounded_type: $ => prec.left(-1, seq(
       choice($.lifetime, $._type, $.use_bounds),
       '+',
-      choice($.lifetime, $._type, $.use_bounds),
+      choice($.lifetime, $._type, $.use_bounds, $.higher_ranked_trait_bound),
     )),
 
     use_bounds: $ => seq(
@@ -927,6 +928,7 @@ export default grammar({
       sepBy1(',', seq(
         choice(
           $._type,
+          '_',
           $.type_binding,
           $.lifetime,
           $._literal,

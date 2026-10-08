@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-rust",
-  "version": "0.24.4",
+  "version": "0.24.5",
   "description": "Brokk-maintained Tree-sitter grammar for Rust",
   "type": "module",
   "repository": "https://github.com/BrokkAi/tree-sitter-rust",

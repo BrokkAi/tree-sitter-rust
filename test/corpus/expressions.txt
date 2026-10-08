@@ -1279,6 +1279,32 @@ foo::<8>();
       arguments: (arguments))))
 
 ================================================================================
+Turbofish with inferred type arguments
+================================================================================
+
+char::<_, NomErrorType>('#');
+foo::<_, NomErrorType>();
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (call_expression
+      (generic_function
+        (identifier)
+        (type_arguments
+          (type_identifier)))
+      (arguments
+        (char_literal))))
+  (expression_statement
+    (call_expression
+      (generic_function
+        (identifier)
+        (type_arguments
+          (type_identifier)))
+      (arguments))))
+
+================================================================================
 Closures
 ================================================================================
 
