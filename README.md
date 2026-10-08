@@ -19,14 +19,14 @@ prefer the upstream project.
 Add the Brokk-maintained Rust crate to your project:
 
 ```sh
-cargo add brokk-tree-sitter-rust@=0.24.4
+cargo add brokk-tree-sitter-rust@=0.24.5
 ```
 
 Or add it directly to `Cargo.toml`:
 
 ```toml
 [dependencies]
-brokk-tree-sitter-rust = "=0.24.4"
+brokk-tree-sitter-rust = "=0.24.5"
 ```
 
 The npm and Python bindings retain their upstream-compatible package names but

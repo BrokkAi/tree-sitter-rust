@@ -248,6 +248,10 @@ Functions with abstract return types
 fn triples(a: impl B) -> impl Iterator<Item=(usize)> {
 }
 
+fn tuple_return() -> (impl Subscriber + for<'a> LookupSpan<'a>, ()) {
+    unimplemented!()
+}
+
 --------------------------------------------------------------------------------
 
 (source_file
@@ -266,7 +270,29 @@ fn triples(a: impl B) -> impl Iterator<Item=(usize)> {
             (type_identifier)
             (tuple_type
               (primitive_type))))))
-    (block)))
+    (block))
+  (function_item
+    (identifier)
+    (parameters)
+    (tuple_type
+      (bounded_type
+        (abstract_type
+          (type_identifier))
+        (higher_ranked_trait_bound
+          (type_parameters
+            (lifetime_parameter
+              (lifetime
+                (identifier))))
+          (generic_type
+            (type_identifier)
+            (type_arguments
+              (lifetime
+                (identifier))))))
+      (unit_type))
+    (block
+      (macro_invocation
+        (identifier)
+        (token_tree)))))
 
 ================================================================================
 Impl with lifetimes first

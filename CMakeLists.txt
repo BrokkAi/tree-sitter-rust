@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-rust
-        VERSION "0.24.4"
+        VERSION "0.24.5"
         DESCRIPTION "Rust grammar for tree-sitter"
         HOMEPAGE_URL "https://github.com/BrokkAi/tree-sitter-rust"
         LANGUAGES C)
