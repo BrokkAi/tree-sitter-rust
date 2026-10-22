@@ -108,6 +108,7 @@ export default grammar({
     // Local ambiguity due to anonymous types:
     // See https://internals.rust-lang.org/t/pre-rfc-deprecating-anonymous-parameters/3710
     [$._type, $._pattern],
+    [$.generic_type_with_turbofish_in_type, $.generic_pattern],
     [$.unit_type, $.tuple_pattern],
     [$.scoped_identifier, $.scoped_type_identifier],
     [$.parameters, $._pattern],
@@ -798,6 +799,7 @@ export default grammar({
       $.metavariable,
       $.pointer_type,
       $.generic_type,
+      alias($.generic_type_with_turbofish_in_type, $.generic_type),
       $.scoped_type_identifier,
       $.tuple_type,
       $.unit_type,
@@ -893,6 +895,15 @@ export default grammar({
       )),
       field('type_arguments', $.type_arguments),
     )),
+
+    generic_type_with_turbofish_in_type: $ => seq(
+      field('type', choice(
+        $._type_identifier,
+        $.scoped_type_identifier,
+      )),
+      '::',
+      field('type_arguments', $.type_arguments),
+    ),
 
     generic_type_with_turbofish: $ => seq(
       field('type', choice(

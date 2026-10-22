@@ -4646,6 +4646,15 @@
           "name": "generic_type"
         },
         {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "generic_type_with_turbofish_in_type"
+          },
+          "named": true,
+          "value": "generic_type"
+        },
+        {
           "type": "SYMBOL",
           "name": "scoped_type_identifier"
         },
@@ -5275,6 +5284,40 @@
           }
         ]
       }
+    },
+    "generic_type_with_turbofish_in_type": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_type_identifier"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "scoped_type_identifier"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "::"
+        },
+        {
+          "type": "FIELD",
+          "name": "type_arguments",
+          "content": {
+            "type": "SYMBOL",
+            "name": "type_arguments"
+          }
+        }
+      ]
     },
     "generic_type_with_turbofish": {
       "type": "SEQ",
@@ -10445,6 +10488,10 @@
     [
       "_type",
       "_pattern"
+    ],
+    [
+      "generic_type_with_turbofish_in_type",
+      "generic_pattern"
     ],
     [
       "unit_type",
