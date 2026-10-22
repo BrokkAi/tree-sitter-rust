@@ -384,3 +384,96 @@ d as *mut E<<F as E>::G>;
                   (type_identifier)
                   (type_identifier)))
               (type_identifier))))))))
+
+================================================================================
+Turbofish paths in type positions
+================================================================================
+
+fn cast(value: Box<Logger>) {
+    let _ = value as Box::<dyn log::Log>;
+}
+let x: a::b::Box::<T> = value;
+struct Holder { value: Box::<T> }
+fn convert(value: a::b::Box::<T>) -> Box::<T> { value }
+type Nested = Vec::<Box::<T>>;
+type Continued = Box::<T>::Inner;
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_item
+    (identifier)
+    (parameters
+      (parameter
+        (identifier)
+        (generic_type
+          (type_identifier)
+          (type_arguments
+            (type_identifier)))))
+    (block
+      (let_declaration
+        (type_cast_expression
+          (identifier)
+          (generic_type
+            (type_identifier)
+            (type_arguments
+              (dynamic_type
+                (scoped_type_identifier
+                  (identifier)
+                  (type_identifier)))))))))
+  (let_declaration
+    (identifier)
+    (generic_type
+      (scoped_type_identifier
+        (scoped_identifier
+          (identifier)
+          (identifier))
+        (type_identifier))
+      (type_arguments
+        (type_identifier)))
+    (identifier))
+  (struct_item
+    (type_identifier)
+    (field_declaration_list
+      (field_declaration
+        (field_identifier)
+        (generic_type
+          (type_identifier)
+          (type_arguments
+            (type_identifier))))))
+  (function_item
+    (identifier)
+    (parameters
+      (parameter
+        (identifier)
+        (generic_type
+          (scoped_type_identifier
+            (scoped_identifier
+              (identifier)
+              (identifier))
+            (type_identifier))
+          (type_arguments
+            (type_identifier)))))
+    (generic_type
+      (type_identifier)
+      (type_arguments
+        (type_identifier)))
+    (block
+      (identifier)))
+  (type_item
+    (type_identifier)
+    (generic_type
+      (type_identifier)
+      (type_arguments
+        (generic_type
+          (type_identifier)
+          (type_arguments
+            (type_identifier))))))
+  (type_item
+    (type_identifier)
+    (scoped_type_identifier
+      (generic_type
+        (type_identifier)
+        (type_arguments
+          (type_identifier)))
+      (type_identifier))))
