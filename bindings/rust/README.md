@@ -9,7 +9,7 @@ To use this crate, add it to the `[dependencies]` section of your `Cargo.toml`:
 
 ```toml
 tree-sitter = "0.25"
-brokk-tree-sitter-rust = "=0.24.6"
+brokk-tree-sitter-rust = "=0.24.7"
 ```
 
 Typically, use the `LANGUAGE` constant with a tree-sitter `Parser`:

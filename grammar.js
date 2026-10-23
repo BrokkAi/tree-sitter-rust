@@ -1145,6 +1145,7 @@ export default grammar({
       prec.left(PREC.range, seq($._expression, choice('..', '...', '..='), $._expression)),
       prec.left(PREC.range, seq($._expression, '..')),
       prec.right(PREC.range + 1, seq('..', $._expression)),
+      prec.right(PREC.range + 1, seq('..=', $._expression)),
       prec.left(PREC.range, '..'),
     ),
 
