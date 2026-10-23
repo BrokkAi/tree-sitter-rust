@@ -1,6 +1,6 @@
 LANGUAGE_NAME := tree-sitter-rust
 HOMEPAGE_URL := https://github.com/BrokkAi/tree-sitter-rust
-VERSION := 0.24.6
+VERSION := 0.24.7
 DESCRIPTION := Rust grammar for tree-sitter
 
 # repository
