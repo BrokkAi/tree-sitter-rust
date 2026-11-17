@@ -2,9 +2,11 @@ fn main() {
     let src_dir = std::path::Path::new("src");
 
     let mut c_config = cc::Build::new();
+    if std::env::var_os("CARGO_FEATURE_REUSE_ALLOCATOR").is_some() {
+        c_config.define("TREE_SITTER_REUSE_ALLOCATOR", None);
+    }
     c_config.std("c11").include(src_dir);
     c_config
-        .define("TREE_SITTER_REUSE_ALLOCATOR", None)
         .define("tree_sitter_rust", "brokk_tree_sitter_rust")
         .define(
             "tree_sitter_rust_external_scanner_create",
