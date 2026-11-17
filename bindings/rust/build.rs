@@ -4,6 +4,7 @@ fn main() {
     let mut c_config = cc::Build::new();
     c_config.std("c11").include(src_dir);
     c_config
+        .define("TREE_SITTER_REUSE_ALLOCATOR", None)
         .define("tree_sitter_rust", "brokk_tree_sitter_rust")
         .define(
             "tree_sitter_rust_external_scanner_create",

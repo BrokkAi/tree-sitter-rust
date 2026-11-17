@@ -21,6 +21,10 @@ include = ["/LICENSE", "bindings/rust/*", "grammar.js", "queries/*", "src/*", "t
 [lib]
 path = "bindings/rust/lib.rs"
 
+[[test]]
+name = "allocator_boundary"
+path = "bindings/rust/tests/allocator_boundary.rs"
+
 [dependencies]
 tree-sitter-language = "0.1"
 
